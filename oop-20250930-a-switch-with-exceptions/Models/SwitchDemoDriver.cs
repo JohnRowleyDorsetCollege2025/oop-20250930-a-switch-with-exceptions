@@ -10,10 +10,12 @@ namespace oop_20250930_a_switch_with_exceptions.Models
     {
         public static void Run()
         {
-            Console.WriteLine("Switch Demo");
-            NestedIfDemo();
-            SequentialIfDemo();
+            //Console.WriteLine("Switch Demo");
+            //NestedIfDemo();
+            //SequentialIfDemo();
             SwitchDemo();
+            SwitchExpressionDemo();
+            DayOfWeek();
 
 
         }
@@ -79,6 +81,39 @@ namespace oop_20250930_a_switch_with_exceptions.Models
                     break;
             }
 
+        }
+
+        public static void SwitchExpressionDemo()
+        {
+            Console.WriteLine("Switch Expression Demo");
+            int number = 3;
+            string result = number switch
+            {
+                1 => "One",
+                2 => "Two",
+                3 => "Three",
+                _ => "Other"
+            };
+            Console.WriteLine(result);
+        }
+
+        public static void DayOfWeek()
+        {
+            Console.WriteLine("DayOfWeek Demo");
+            int dayNumber = 3; // Example: 3 means Wednesday
+
+            string dayName = dayNumber switch
+            {
+                1 => "Monday",
+                2 => "Tuesday",
+                3 => "Wednesday",
+                4 => "Thursday",
+                5 => "Friday",
+                6 => "Saturday",
+                7 => "Sunday",
+                _ => "Invalid day" // default case
+            };
+            Console.WriteLine(dayName);
         }
     }
 }
